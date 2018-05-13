@@ -45,3 +45,13 @@
 .demo-footer .mdl-mini-footer--link-list a {
   font-size: 13px;
 }
+
+.demo-card-square.mdl-card {
+  width: 320px;
+  height: 320px;
+}
+
+.demo-card-square>.mdl-card__title {
+  color: #fff;
+  background: url('') bottom right 15% no-repeat #7986CB;
+}
