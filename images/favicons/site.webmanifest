@@ -1,6 +1,6 @@
 {
     "name": "Send",
-    "short_name": "Send",
+    "name": "Send To Richie Bendall",
     "icons": [
         {
             "src": "/images/favicons/android-chrome-36x36.png",
@@ -48,7 +48,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#ffffff",
+    "theme_color": "#3F51B5",
     "background_color": "#ffffff",
     "start_url": "/utm_source=homescreen",
     "display": "standalone"
