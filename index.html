@@ -47,157 +47,123 @@
     <!-- Web App Manifest -->
     <link rel="manifest" href="/manifest.json">
 
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500'>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.3.0/material.indigo-red.min.css'>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css'>
+    <!-- Import Resources -->
+    <link rel='stylesheet' href='https://unpkg.com/material-components-web@0.41.1/dist/material-components-web.min.css'>
 
     <style>
-        html > body {
-            font-family: "Roboto", "Helvetica", "Arial", "sans-serif" !important;
+        :root {
+            --mdc-theme-primary: #3f51b5;
+            --mdc-theme-secondary: #f44336;
+            --mdc-theme-on-primary: #ffffff;
+            --mdc-theme-on-secondary: #ffffff;
         }
         
-        .demo-ribbon {
-            width: 100%;
-            height: 40vh;
+        :root body {
             background-color: #3f51b5;
-            -webkit-flex-shrink: 0;
-            -ms-flex-negative: 0;
-            flex-shrink: 0;
         }
         
-        .demo-main {
-            margin-top: -35vh;
-            -webkit-flex-shrink: 0;
-            -ms-flex-negative: 0;
-            flex-shrink: 0;
-        }
-        
-        .demo-header .mdl-layout__header-row {
-            padding-left: 40px;
-        }
-        
-        .demo-container {
-            max-width: 1600px;
-            width: -webkit-calc(100% - 16px);
-            width: -moz-calc(100% - 16px);
-            width: calc(100% - 16px);
-            margin: 0 auto;
-        }
-        
-        .demo-content {
-            -webkit-border-radius: 2px;
-            -moz-border-radius: 2px;
-            border-radius: 2px;
-            padding: 80px 56px;
-            margin-bottom: 80px;
-        }
-        
-        .demo-layout.is-small-screen .demo-content {
-            padding: 40px 28px;
-        }
-        
-        .demo-content h3 {
-            margin-top: 48px;
-        }
-        
-        .demo-footer {
-            padding-left: 40px;
-        }
-        
-        .demo-footer .mdl-mini-footer--link-list a {
-            font-size: 13px;
-        }
-        
-        .white-icon {
-            fill: white;
+        :root body main {
+            background-color: #ffffff;
+            border-radius: 4px;
+            position: absolute;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-left: 20px;
+            margin-right: 20px;
+            min-width: calc(100vw - 80px);
+            min-height: calc(100vh - 80px);
+            padding: 20px;
         }
     </style>
+
+    <!-- Import Lower Priority Resources -->
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css'>
 
 </head>
 
 <body>
 
-    <div class="demo-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100">
-
-        <div class="demo-ribbon"></div>
-        <main class="demo-main mdl-layout__content">
-            <div class="demo-container mdl-grid">
-                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
-                <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
-                    <h3>Send To Richie Bendall</h3>
-                    <p>
-                        The easiest way to send content to Richie Bendall.
-                        <br>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                            <path fill="none" d="M0 0h24v24H0V0z" />
-                            <path d="M4.01 6.03l7.51 3.22-7.52-1 .01-2.22m7.5 8.72L4 17.97v-2.22l7.51-1M2.01 3L2 10l15 2-15 2 .01 7L23 12 2.01 3z" />
-                        </svg> Fast: Your content will be delivered at the fastest speed possible.
-                        <br>
-
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                            <g fill="none">
-                                <path d="M0 0h24v24H0V0z" />
-                                <path opacity=".87" d="M0 0h24v24H0V0z" />
-                            </g>
-                            <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z" />
-                        </svg> Secure: Your content will be delivered with highly sophisticated security methods.
-                    </p>
-                    <h4>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg>          Send an email</h4>
-                    <form action="#">
-                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <input id="subjectbox" class="mdl-textfield__input" type="text" required>
-                            <label class="mdl-textfield__label" for="subjectbox">Subject</label>
-                        </div>
-                        <br>
-                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <input id="messagebox" class="mdl-textfield__input" type="text" required>
-                            <label class="mdl-textfield__label" for="messagebox">Message</label>
-                        </div>
-                        <br>
-                        <button id="send-button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-
-                            <svg class="white-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                <path fill="none" d="M0 0h24v24H0V0z" />
-                                <path d="M4.01 6.03l7.51 3.22-7.52-1 .01-2.22m7.5 8.72L4 17.97v-2.22l7.51-1M2.01 3L2 10l15 2-15 2 .01 7L23 12 2.01 3z" />
-                            </svg>
-                            Send Externally
-                        </button>
-                    </form>
-                    <h4>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM19 18H6c-2.21 0-4-1.79-4-4 0-2.05 1.53-3.76 3.56-3.97l1.07-.11.5-.95C8.08 7.14 9.94 6 12 6c2.62 0 4.88 1.86 5.39 4.43l.3 1.5 1.53.11c1.56.1 2.78 1.41 2.78 2.96 0 1.65-1.35 3-3 3zM8 13h2.55v3h2.9v-3H16l-4-4z"/></svg>          Send a file</h4>
-                    <script type="text/javascript">
-                        var mf_dropbox_width = 300;
-                        var mf_dropbox_id = "19e4ff298bcd013d87d8ea77a2cef80a233dbfbce73bc256d560aed3722edb1f";
-                    </script>
-                    <script type="text/javascript" src="https://www.mediafire.com/dropbox/dropbox.js"></script>
+    <main class="mdc-typography">
+        <h1 class="mdc-typography--headline1">Send to Richie Bendall</h1>
+        <ul class="mdc-list mdc-list--two-line" aria-orientation="vertical">
+            <li class="mdc-list-item" data-mdc-auto-init="MDCRipple">
+                <span class="mdc-list-item__graphic">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path fill="none" d="M0 0h24v24H0V0zm0 0h24v24H0V0z"/>
+                    <path d="M9 21h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.58 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2zM9 9l4.34-4.34L12 10h9v2l-3 7H9V9zM1 9h4v12H1z"/>
+                </svg>
+            </span>
+                <span class="mdc-list-item__text">
+            <span class="mdc-list-item__text"><span class="mdc-list-item__primary-text">Easy</span>
+                <span class="mdc-list-item__secondary-text">The easiest way to send content to Richie Bendall.</span></span>
+                </span>
+            </li>
+            <li class="mdc-list-item" data-mdc-auto-init="MDCRipple">
+                <span class="mdc-list-item__graphic">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path fill="none" d="M0 0h24v24H0V0z"/>
+                    <path d="M4.01 6.03l7.51 3.22-7.52-1 .01-2.22m7.5 8.72L4 17.97v-2.22l7.51-1M2.01 3L2 10l15 2-15 2 .01 7L23 12 2.01 3z"/>
+                </svg>
+            </span>
+                <span class="mdc-list-item__text">
+            <span class="mdc-list-item__text"><span class="mdc-list-item__primary-text">Fast</span>
+                <span class="mdc-list-item__secondary-text">Your content will be delivered at the fastest speed possible.</span></span>
+                </span>
+            </li>
+            <li class="mdc-list-item" data-mdc-auto-init="MDCRipple">
+                <span class="mdc-list-item__graphic">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <g fill="none">
+                        <path d="M0 0h24v24H0V0z"/>
+                        <path opacity=".87" d="M0 0h24v24H0V0z"/>
+                    </g>
+                    <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"/>
+                </svg>
+            </span>
+                <span class="mdc-list-item__text">
+            <span class="mdc-list-item__text"><span class="mdc-list-item__primary-text">Secure</span>
+                <span class="mdc-list-item__secondary-text">Your content will be delivered with highly sophisticated security methods.</span></span>
+                </span>
+            </li>
+        </ul>
+        <h3 class="mdc-typography--headline3">Send an email</h3>
+        <form action="#">
+            <div id="subject-div" class="mdc-text-field mdc-text-field--outlined" data-mdc-auto-init="MDCTextField">
+                <input type="text" id="subject" class="mdc-text-field__input">
+                <label for="subject" class="mdc-floating-label">Subject</label>
+                <div class="mdc-notched-outline">
+                    <svg>
+                        <path class="mdc-notched-outline__path" />
+                    </svg>
                 </div>
+                <div class="mdc-notched-outline__idle"></div>
             </div>
-
-        </main>
-    </div>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js' async></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.3.0/material.min.js'></script>
+            <br>
+            <br>
+            <div id="message-div" class="mdc-text-field mdc-text-field--textarea" data-mdc-auto-init="MDCTextField">
+                <textarea id="message" class="mdc-text-field__input"></textarea>
+                <label for="message" class="mdc-floating-label">Message</label>
+            </div>
+            <br>
+            <button type="submit" id="send-email" class="mdc-button mdc-button--outlined" data-mdc-auto-init="MDCRipple">Send email</button>
+        </form>
+        <h3 class="mdc-typography--headline3">Send a file</h3>
+        <script type="text/javascript">
+            var mf_dropbox_width = -1;
+            var mf_dropbox_id = "19e4ff298bcd013d87d8ea77a2cef80a233dbfbce73bc256d560aed3722edb1f";
+        </script>
+        <script type="text/javascript" src="https://www.mediafire.com/dropbox/dropbox.js"></script>
+    </main>
+    <script async src='https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js'></script>
+    <script src='https://unpkg.com/material-components-web@0.41.1/dist/material-components-web.min.js'></script>
 
     <script async>
-        document.getElementById("send-button").addEventListener(
-            "click",
-            function() {
-                if (
-                    document.getElementById("subjectbox").value !== "" &&
-                    document.getElementById("messagebox").value !== ""
-                ) {
-                    window.open(
-                        "mailto:richiebendall@gmail.com&subject=" +
-                        document.getElementById("subjectbox").value +
-                        "&body=" +
-                        document.getElementById("messagebox").value,
-                        "_blank"
-                    );
-                }
-            },
-            false
-        );
+        window.mdc.autoInit();
+
+        document.getElementById("send-email").addEventListener("click", function() {
+            window.open("mailto:richiebendall@gmail.com&subject=" + encodeURI(document.getElementById("subject").value) + "&body=" + encodeURI(document.getElementById("message").value));
+        });
     </script>
 
 </body>
