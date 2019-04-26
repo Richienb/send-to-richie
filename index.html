@@ -2,162 +2,379 @@
 <html lang="en">
 
 <head>
-    <!-- SEO -->
-    <title>Send To Richie Bendall</title>
-    <meta name="description" content="The easiest way to send content to Richie Bendall. ">
-
-    <!-- Website Stuff -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <meta name="theme-color" content="#3F51B5">
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="images/favicon.png">
+    <title>Send To Richie</title>
+    <meta name="description" content="An easy way to send an email or file to Richie Bendall.">
 
-    <!-- Native App Support -->
-    <meta name="apple-mobile-web-app-title" content="Send To Richie Bendall">
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="194x194" href="/images/favicons/favicon-194x194.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/images/favicons/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
-    <link rel="manifest" href="/images/favicons/site.webmanifest">
-    <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#3f51b5">
-    <link rel="shortcut icon" href="/images/favicons/favicon.ico">
-    <meta name="application-name" content="Send To Richie Bendall">
-    <meta name="msapplication-TileColor" content="#2b5797">
-    <meta name="msapplication-TileImage" content="/images/favicons/mstile-144x144.png">
-    <meta name="msapplication-config" content="/images/favicons/browserconfig.xml">
-    <meta name="theme-color" content="#3f51b5">
+    <link rel="shortcut icon" href="favicon.ico">
 
-    <!-- Rich Link Support -->
-    <meta property="og:image" content="/images/favicons/og-image.jpg">
-    <meta property="og:image:width" content="74">
-    <meta property="og:image:height" content="74">
-    <meta property="og:title" content="Send To Richie Bendall">
-    <meta property="og:description" content="The easiest way to send content to Richie Bendall.">
-    <meta property="og:url" content="https://send.richie-bendall.ml">
-
-    <!-- Web App Manifest -->
-    <link rel="manifest" href="/manifest.json">
-
-    <!-- Import Resources -->
-    <link rel='stylesheet' href='https://unpkg.com/material-components-web@0.41.1/dist/material-components-web.min.css'>
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web@1.1.1/dist/material-components-web.min.css">
 
     <style>
-        :root {
+        body {
             --mdc-theme-primary: #3f51b5;
             --mdc-theme-secondary: #f44336;
-            --mdc-theme-on-primary: #ffffff;
-            --mdc-theme-on-secondary: #ffffff;
+            background-color: #fafafa;
         }
-        
-        :root body {
-            background-color: #3f51b5;
-        }
-        
-        :root body main {
-            background-color: #ffffff;
-            border-radius: 4px;
+
+        body .ribbon {
+            top: 0;
+            z-index: -1;
+            background-color: var(--mdc-theme-primary, #6200ee);
+            width: 100%;
+            height: 10rem;
             position: absolute;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            margin-left: 20px;
-            margin-right: 20px;
-            min-width: calc(100vw - 80px);
-            min-height: calc(100vh - 80px);
-            padding: 20px;
+        }
+
+        body .main-content {
+            background-color: white;
+            border-radius: 4px;
+            margin: 1.5rem;
+            padding: 2rem;
+            min-height: calc(100vh - 7rem);
+        }
+
+        body .main-content img {
+            max-width: 100%;
+        }
+
+        body .main-content .mdc-button.mdc-button--raised {
+            background-color: var(--mdc-theme-secondary, #018786);
+        }
+
+        body .main-content .theme-toggle {
+            position: absolute;
+            top: 0.5rem;
+            right: 3rem;
+        }
+
+        body .main-content a {
+            color: #3f51b5;
+        }
+
+        body .main-content ::-moz-selection {
+            background-color: #3f51b5;
+            color: white;
+        }
+
+        body .main-content ::selection {
+            background-color: #3f51b5;
+            color: white;
+        }
+
+        body .main-content #carbonads {
+            margin-bottom: 1rem;
+            float: right;
+            border-radius: 6px;
+            box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+            font-family: Roboto, sans-serif;
+            line-height: 28px;
+            padding: 8px;
+            box-sizing: border-box;
+            transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @media only screen and (max-width: 425px) {
+            body .main-content #carbonads {
+                width: 100%;
+            }
+        }
+
+        body .main-content #carbonads:hover {
+            box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+        }
+
+        body .main-content #carbonads .carbon-wrap .carbon-img>img {
+            margin-right: 9px;
+            float: left;
+        }
+
+        @media only screen and (max-width 400px) {
+            body .main-content #carbonads .carbon-wrap .carbon-img>img {
+                width: auto;
+                max-width: 130px;
+                height: 50px;
+            }
+        }
+
+        body .main-content #carbonads .carbon-wrap .carbon-text {
+            color: #637381;
+            font-weight: 300;
+            display: block;
+            font-size: 12px;
+            line-height: 15.96px;
+            margin-bottom: 0;
+            margin-top: 8px;
+            text-decoration: none;
+        }
+
+        body .main-content #carbonads .carbon-poweredby {
+            color: #c5cdd0;
+            font-size: 8px;
+            font-weight: 500;
+            line-height: 10px;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+
+        body .full-width {
+            width: 100%;
+        }
+
+        body.setting--dark {
+            background-color: #212121 !important;
+            --mdc-theme-text-primary-on-background: white;
+            --mdc-theme-text-secondary-on-background: white;
+            --mdc-theme-text-icon-on-background: white;
+        }
+
+        body.setting--dark::-webkit-scrollbar {
+            background-color: #505050;
+        }
+
+        body.setting--dark .main-content {
+            color: white;
+            background-color: #303030;
+        }
+
+        body.setting--dark .mdc-select__selected-text {
+            color: white !important;
+        }
+
+        body.setting--dark .mdc-text-field__input,
+        body.setting--dark .mdc-floating-label {
+            color: white !important;
+        }
+
+        body.setting--dark .mdc-notched-outline__leading,
+        body.setting--dark .mdc-notched-outline__notch,
+        body.setting--dark .mdc-notched-outline__trailing {
+            border-color: white !important;
+        }
+
+        body.setting--dark #carbonads .carbon-text {
+            color: white !important;
+        }
+
+        body.setting--dark a {
+            color: #5c6bc0;
+        }
+
+        body.setting--dark ::-moz-selection {
+            background-color: #c5cae9;
+            color: black;
+        }
+
+        body.setting--dark ::selection {
+            background-color: #c5cae9;
+            color: black;
+        }
+
+        body.setting--animate-colours {
+            transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body.setting--animate-colours .main-content,
+        body.setting--animate-colours a,
+        body.setting--animate-colours ::-moz-selection {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transition-property: background-color, color;
+        }
+
+        body.setting--animate-colours .main-content,
+        body.setting--animate-colours a,
+        body.setting--animate-colours ::selection {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transition-property: background-color, color;
+        }
+
+        body::-webkit-scrollbar {
+            border-radius: 100px;
+            background-color: transparent;
+            width: 8px;
+            height: 8px;
+            overflow: visible;
+        }
+
+        body::-webkit-scrollbar-button {
+            height: 0;
+            width: 0;
+        }
+
+        body::-webkit-scrollbar-corner {
+            background-color: transparent;
+        }
+
+        body::-webkit-scrollbar-thumb {
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 100px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border: solid transparent;
+            border-width: 1px 1px 1px 6px;
+            min-height: 28px;
+            padding: 100px 0 0;
+        }
+
+        body::-webkit-scrollbar-thumb:hover {
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        body::-webkit-scrollbar-thumb:active {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        body::-webkit-scrollbar-track {
+            background-clip: padding-box;
+            border: solid transparent;
+            border-width: 0 0 0 4px;
         }
     </style>
 
-    <!-- Import Lower Priority Resources -->
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500'>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
 
 </head>
 
 <body>
-
-    <main class="mdc-typography">
-        <h1 class="mdc-typography--headline1">Send to Richie Bendall</h1>
+    <div class="ribbon mdc-elevation--z4"></div>
+    <main class="main-content mdc-typography mdc-elevation--z8">
+        <script async src="https://cdn.carbonads.com/carbon.js?serve=CK7I6K3E&amp;placement=wwwrichie-bendallml" id="_carbonads_js"></script>
+        <button class="theme-toggle mdc-fab mdc-fab--mini" aria-label="Toggle theme" data-mdc-auto-init="MDCRipple">
+            <svg class="mdc-fab__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path fill="none" d="M0 0h24v24H0V0z" />
+                <path
+                    d="M11 7l-3.2 9h1.9l.7-2h3.2l.7 2h1.9L13 7h-2zm-.15 5.65L12 9l1.15 3.65h-2.3zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69zm-2 5.79V18h-3.52L12 20.48 9.52 18H6v-3.52L3.52 12 6 9.52V6h3.52L12 3.52 14.48 6H18v3.52L20.48 12 18 14.48z" />
+            </svg>
+        </button>
+        <h1 class="mdc-typography--headline2">Send to Richie Bendall
+        </h1>
+        <p class="mdc-typography--body1">An easy way to send an email or file to Richie Bendall.</p>
         <ul class="mdc-list mdc-list--two-line" aria-orientation="vertical">
             <li class="mdc-list-item" data-mdc-auto-init="MDCRipple">
-                <span class="mdc-list-item__graphic">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                    <path fill="none" d="M0 0h24v24H0V0zm0 0h24v24H0V0z"/>
-                    <path d="M9 21h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.58 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2zM9 9l4.34-4.34L12 10h9v2l-3 7H9V9zM1 9h4v12H1z"/>
+                <svg class="mdc-list-item__graphic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path fill="none" d="M0 0h24v24H0V0zm0 0h24v24H0V0z" />
+                    <path
+                        d="M9 21h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.58 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2zM9 9l4.34-4.34L12 10h9v2l-3 7H9V9zM1 9h4v12H1z" />
                 </svg>
-            </span>
                 <span class="mdc-list-item__text">
-            <span class="mdc-list-item__text"><span class="mdc-list-item__primary-text">Easy</span>
-                <span class="mdc-list-item__secondary-text">The easiest way to send content to Richie Bendall.</span></span>
+                    <span class="mdc-list-item__primary-text">Easy</span>
+                    <span class="mdc-list-item__secondary-text">The easiest way to send content to Richie Bendall.</span>
+                </span>
+
+            </li>
+            <li class="mdc-list-item" data-mdc-auto-init="MDCRipple">
+                <svg class="mdc-list-item__graphic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path fill="none" d="M0 0h24v24H0V0z" />
+                    <path d="M4.01 6.03l7.51 3.22-7.52-1 .01-2.22m7.5 8.72L4 17.97v-2.22l7.51-1M2.01 3L2 10l15 2-15 2 .01 7L23 12 2.01 3z" />
+                </svg>
+                <span class="mdc-list-item__text">
+                    <span class="mdc-list-item__primary-text">Fast</span>
+                    <span class="mdc-list-item__secondary-text">Your content will be delivered at the fastest speed possible.</span>
                 </span>
             </li>
             <li class="mdc-list-item" data-mdc-auto-init="MDCRipple">
-                <span class="mdc-list-item__graphic">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                    <path fill="none" d="M0 0h24v24H0V0z"/>
-                    <path d="M4.01 6.03l7.51 3.22-7.52-1 .01-2.22m7.5 8.72L4 17.97v-2.22l7.51-1M2.01 3L2 10l15 2-15 2 .01 7L23 12 2.01 3z"/>
-                </svg>
-            </span>
-                <span class="mdc-list-item__text">
-            <span class="mdc-list-item__text"><span class="mdc-list-item__primary-text">Fast</span>
-                <span class="mdc-list-item__secondary-text">Your content will be delivered at the fastest speed possible.</span></span>
-                </span>
-            </li>
-            <li class="mdc-list-item" data-mdc-auto-init="MDCRipple">
-                <span class="mdc-list-item__graphic">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <svg class="mdc-list-item__graphic" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                     <g fill="none">
-                        <path d="M0 0h24v24H0V0z"/>
-                        <path opacity=".87" d="M0 0h24v24H0V0z"/>
+                        <path d="M0 0h24v24H0V0z" />
+                        <path opacity=".87" d="M0 0h24v24H0V0z" />
                     </g>
-                    <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"/>
+                    <path
+                        d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z" />
                 </svg>
-            </span>
                 <span class="mdc-list-item__text">
-            <span class="mdc-list-item__text"><span class="mdc-list-item__primary-text">Secure</span>
-                <span class="mdc-list-item__secondary-text">Your content will be delivered with highly sophisticated security methods.</span></span>
+                    <span class="mdc-list-item__primary-text">Secure</span>
+                    <span class="mdc-list-item__secondary-text">Your content will be delivered with highly sophisticated security methods.</span>
                 </span>
             </li>
         </ul>
         <h3 class="mdc-typography--headline3">Send an email</h3>
-        <form action="#">
-            <div id="subject-div" class="mdc-text-field mdc-text-field--outlined" data-mdc-auto-init="MDCTextField">
-                <input type="text" id="subject" class="mdc-text-field__input">
-                <label for="subject" class="mdc-floating-label">Subject</label>
+        <form class="email__form" action="#">
+            <div class="email__subject mdc-text-field mdc-text-field--outlined full-width" data-mdc-auto-init="MDCTextField">
+                <input type="text" id="tf-outlined" class="mdc-text-field__input" required>
                 <div class="mdc-notched-outline">
-                    <svg>
-                        <path class="mdc-notched-outline__path" />
-                    </svg>
+                    <div class="mdc-notched-outline__leading"></div>
+                    <div class="mdc-notched-outline__notch">
+                        <label for="tf-outlined" class="mdc-floating-label">Subject</label>
+                    </div>
+                    <div class="mdc-notched-outline__trailing"></div>
                 </div>
-                <div class="mdc-notched-outline__idle"></div>
             </div>
-            <br>
-            <br>
-            <div id="message-div" class="mdc-text-field mdc-text-field--textarea" data-mdc-auto-init="MDCTextField">
-                <textarea id="message" class="mdc-text-field__input"></textarea>
-                <label for="message" class="mdc-floating-label">Message</label>
-            </div>
-            <br>
-            <button type="submit" id="send-email" class="mdc-button mdc-button--outlined" data-mdc-auto-init="MDCRipple">Send email</button>
+            <br><br>
+            <div class="email__message mdc-text-field mdc-text-field--textarea mdc-text-field--fullwidth" data-mdc-auto-init="MDCTextField">
+                <textarea id="textarea" class="mdc-text-field__input" rows="6" required></textarea>
+                <div class="mdc-notched-outline">
+                    <div class="mdc-notched-outline__leading"></div>
+                    <div class="mdc-notched-outline__notch">
+                        <label for="textarea" class="mdc-floating-label">Message</label>
+                    </div>
+                    <div class="mdc-notched-outline__trailing"></div>
+                </div>
+            </div><br><br>
+            <button class="mdc-button mdc-button--raised" data-mdc-auto-init="MDCRipple"><span class="mdc-button__label">Send Email</span></button>
         </form>
         <h3 class="mdc-typography--headline3">Send a file</h3>
-        <script type="text/javascript">
+        <script>
             var mf_dropbox_width = -1;
             var mf_dropbox_id = "19e4ff298bcd013d87d8ea77a2cef80a233dbfbce73bc256d560aed3722edb1f";
         </script>
-        <script type="text/javascript" src="https://www.mediafire.com/dropbox/dropbox.js"></script>
+        <script src="https://www.mediafire.com/dropbox/dropbox.js"></script>
     </main>
-    <script async src='https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js'></script>
-    <script src='https://unpkg.com/material-components-web@0.41.1/dist/material-components-web.min.js'></script>
 
-    <script async>
-        window.mdc.autoInit();
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <script src="https://unpkg.com/material-components-web@1.1.1/dist/material-components-web.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.slim.min.js"></script>
 
-        document.getElementById("send-email").addEventListener("click", function() {
-            window.open("mailto:richiebendall@gmail.com&subject=" + encodeURI(document.getElementById("subject").value) + "&body=" + encodeURI(document.getElementById("message").value));
+    <script>
+        "use strict";
+
+        mdc.autoInit();
+
+        Array.prototype.cycle = function(str) {
+            var i = this.indexOf(str);
+            if (i === -1) return undefined;
+            return this[(i + 1) % this.length];
+        };
+
+        var handleTheme = function handleTheme() {
+            switch (localStorage.getItem("theme")) {
+                case "light":
+                    $(".theme-toggle__svg").html(
+                        "<path fill=\"none\" d=\"M0 0h24v24H0V0z\"/><path d=\"M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69zm-2 5.79V18h-3.52L12 20.48 9.52 18H6v-3.52L3.52 12 6 9.52V6h3.52L12 3.52 14.48 6H18v3.52L20.48 12 18 14.48zM12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z\"/><circle cx=\"12\" cy=\"12\" r=\"2.5\"/>"
+                        );
+                    $("body").removeClass("setting--dark");
+                    break;
+
+                case "dark":
+                    $(".theme-toggle__svg").html(
+                        "<path fill=\"none\" d=\"M0 0h24v24H0V0z\"/><path d=\"M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69zm-2 5.79V18h-3.52L12 20.48 9.52 18H6v-3.52L3.52 12 6 9.52V6h3.52L12 3.52 14.48 6H18v3.52L20.48 12 18 14.48zM12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z\"/>"
+                        );
+                    $("body").addClass("setting--dark");
+                    break;
+
+                default:
+                    $(".theme-toggle__svg").html(
+                        "<path fill=\"none\" d=\"M0 0h24v24H0V0z\"/><path d=\"M11 7l-3.2 9h1.9l.7-2h3.2l.7 2h1.9L13 7h-2zm-.15 5.65L12 9l1.15 3.65h-2.3zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69zm-2 5.79V18h-3.52L12 20.48 9.52 18H6v-3.52L3.52 12 6 9.52V6h3.52L12 3.52 14.48 6H18v3.52L20.48 12 18 14.48z\"/>"
+                        );
+                    var hours = new Date().getHours();
+                    $("body").toggleClass("setting--dark", hours <= 6 || hours >= 20 || window.matchMedia("(prefers-color-scheme: dark)").matches || window.matchMedia("(-ms-high-contrast: white-on-black)").matches);
+            }
+        };
+
+        if (["auto", "light", "dark"].indexOf(localStorage.getItem("theme")) === -1) localStorage.setItem("theme", "auto");
+        handleTheme();
+        $("body").addClass("setting--animate-colours");
+        $(".theme-toggle").click(function() {
+            localStorage.setItem("theme", ["auto", "light", "dark"].cycle(localStorage.getItem("theme")));
+            handleTheme();
+        });
+        $(".email__form").on("submit", function(e) {
+            e.preventDefault();
+            window.open("mailto:richiebendall@gmail.com?subject=" + encodeURIComponent($(".email__subject").get(0).MDCTextField.value) + "&body=" + encodeURIComponent($(".email__message").get(0).MDCTextField.value));
         });
     </script>
 
